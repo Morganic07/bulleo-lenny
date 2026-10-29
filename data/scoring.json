@@ -7,5 +7,5 @@
     { "id": "acces_marche", "libelle": "Accès au marché", "poids": 15 },
     { "id": "proximite_culturelle", "libelle": "Proximité culturelle", "poids": 10 }
   ],
-  "pays": []
+  "pays": ["BE", "DE", "CH"]
 }

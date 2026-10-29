@@ -1,0 +1,73 @@
+{
+  "code": "DE",
+  "nom": "Allemagne",
+  "genere_le": "2026-10-29",
+  "criteres": {
+    "demande": {
+      "note": 5,
+      "justification": "L'Allemagne a importé 3,16 Md USD de produits SH 3402 en 2024 (UN Comtrade), dont 497,6 M USD depuis la France. Marché de 83,5 M d'habitants (2025) avec un PIB/hab. de 60 496 USD courants (2025) ; à vérifier, le code SH 3402 reste une hypothèse.",
+      "sources": [
+        { "intitule": "UN Comtrade (API publique) - Allemagne, SH 3402, importations totales et depuis la France, 2024", "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=276&period=2024&partnerCode=0&cmdCode=3402&flowCode=M,X&partner2Code=0&customsCode=C00&motCode=0", "annee": 2024 },
+        { "intitule": "Banque mondiale - Population totale, Allemagne", "url": "https://api.worldbank.org/v2/country/DE/indicator/SP.POP.TOTL?format=json&mrv=2", "annee": 2025 },
+        { "intitule": "Banque mondiale - PIB par habitant (USD courants), Allemagne", "url": "https://api.worldbank.org/v2/country/DE/indicator/NY.GDP.PCAP.CD?format=json&mrv=3", "annee": 2025 }
+      ]
+    },
+    "concurrence": {
+      "note": 2,
+      "justification": "Les exportations allemandes de SH 3402 (4,64 Md USD en 2024, à vérifier) dépassent les importations (3,16 Md USD) : signe d'une industrie locale forte. Un acteur local, Werner & Mertz (Frosch), étend sa gamme vers l'hygiène selon LSA ; poids de la grande distribution et du discount non documenté, à vérifier.",
+      "sources": [
+        { "intitule": "UN Comtrade (API publique) - Allemagne, SH 3402, exportations et importations, 2024", "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=276&period=2024&partnerCode=0&cmdCode=3402&flowCode=M,X&partner2Code=0&customsCode=C00&motCode=0", "annee": 2024 },
+        { "intitule": "LSA - Werner & Mertz tente l'hygiène (marque Frosch, Allemagne)", "url": "https://www.lsa-conso.fr/werner-mertz-tente-l-hygiene,116440", "annee": 2024 }
+      ]
+    },
+    "reglementation": {
+      "note": 3,
+      "justification": "Le marché est intra-UE, donc sans droits de douane, mais le nouveau règlement UE 2026/405 sur les détergents (remplace le 648/2004) remplace le cadre actuel de conformité et d'étiquetage ; dates de transition non confirmées, à vérifier sur le texte. Les obligations nationales allemandes (notification des produits, emballages) n'ont pas été vérifiées : aucune source trouvée.",
+      "sources": [
+        { "intitule": "EUR-Lex - Règlement (UE) 2026/405 sur les détergents et agents de surface, abrogeant le règlement (CE) 648/2004 (page non lue directement, confirmée par recherche web)", "url": "https://eur-lex.europa.eu/eli/reg/2026/405/oj", "annee": 2026 }
+      ]
+    },
+    "logistique": {
+      "note": 5,
+      "justification": "Indice de performance logistique de l'Allemagne de 4,1 sur 5 en 2022 (4,2 en 2018, Banque mondiale), et transport routier possible depuis la France sans formalité douanière intra-UE. Classement mondial et coût du transport de bidons de 5 L non documentés, à vérifier.",
+      "sources": [
+        { "intitule": "Banque mondiale - Logistics Performance Index, Allemagne (4,2 en 2018, 4,1 en 2022)", "url": "https://api.worldbank.org/v2/country/DE/indicator/LP.LPI.OVRL.XQ?format=json&mrv=10", "annee": 2022 }
+      ]
+    },
+    "acces_marche": {
+      "note": 3,
+      "justification": "Aucun droit de douane dans le marché unique, et les importations françaises de SH 3402 atteignent 497,6 M USD en 2024, ce qui indique seulement qu'un flux existe (circuits d'entrée non identifiés). Structure de la distribution, exigences des centrales d'achat et canaux B2B/CSE non documentés : aucune source trouvée.",
+      "sources": [
+        { "intitule": "UN Comtrade (API publique) - Importations allemandes SH 3402 depuis la France, 2024", "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS?reporterCode=276&period=2024&partnerCode=251&cmdCode=3402&flowCode=M&partner2Code=0&customsCode=C00&motCode=0", "annee": 2024 }
+      ]
+    },
+    "proximite_culturelle": {
+      "note": 3,
+      "justification": "Pays voisin de la France, mais la langue allemande sera nécessaire pour l'étiquetage et la prospection (hypothèse de travail). Sensibilité aux produits écologiques non documentée : aucune source trouvée sur la proximité culturelle.",
+      "sources": [
+        { "intitule": "LSA - Werner & Mertz tente l'hygiène (positionnement écologique en Allemagne)", "url": "https://www.lsa-conso.fr/werner-mertz-tente-l-hygiene,116440", "annee": 2024 }
+      ]
+    }
+  },
+  "points_forts": [
+    "Grand marché : 83,5 M d'habitants (Banque mondiale, 2025) et 3,16 Md USD d'importations SH 3402 (UN Comtrade, 2024, à vérifier)",
+    "Importations depuis la France à 497,6 M USD en 2024 (UN Comtrade, à vérifier) : un flux existe déjà",
+    "Marché intra-UE : pas de droits de douane ; LPI de 4,1 sur 5 en 2022 (Banque mondiale)"
+  ],
+  "risques": [
+    "Industrie locale exportatrice (4,64 Md USD d'exportations SH 3402 en 2024, UN Comtrade, à vérifier) ; acteur local Werner & Mertz (Frosch) en extension vers l'hygiène (LSA)",
+    "Nouveau règlement UE 2026/405 sur les détergents : étiquetage et conformité à anticiper",
+    "Obligations nationales allemandes (emballages, notification) non vérifiées",
+    "Le bidon de 5 L ultra-concentré est un format peu courant en grande distribution : à tester avec des acheteurs B2B (hypothèse, non sourcée)"
+  ],
+  "a_verifier": [
+    "Code SH : 3402 est une hypothèse. Pistes à confirmer avec la douane : 3401 pour les gels douche, 3307 (3307.41/49) pour les parfums d'intérieur. La position 3305 (préparations capillaires) est écartée",
+    "Premier importeur européen ? Aucune source comparative consultée : ne pas l'affirmer sans données Eurostat Comext par pays",
+    "Valeurs UN Comtrade en USD courants, année 2024, relevées via l'API publique (aperçu) : à recouper avec Eurostat Comext ou la douane française, notamment pour les flux intra-UE",
+    "Texte exact, dates d'application et dates de transition du règlement UE 2026/405 : non confirmées (la page EUR-Lex n'a pas pu être lue directement)",
+    "Exigences allemandes : notification des détergents, loi sur les emballages (registre LUCID), langue d'étiquetage",
+    "Structure de la distribution allemande (discount, drogeries, B2B) : aucune source trouvée",
+    "Indice LPI : 4,1 sur 5 en 2022 (4,2 en 2018) ; vérifier s'il existe une édition plus récente et le classement mondial",
+    "Évolution des importations sur plusieurs années : un seul millésime (2024) consulté"
+  ]
+}

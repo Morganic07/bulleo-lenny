@@ -1,0 +1,85 @@
+{
+  "code": "CH",
+  "nom": "Suisse",
+  "genere_le": "2026-10-29",
+  "criteres": {
+    "demande": {
+      "note": 4,
+      "justification": "Pays de 9 127 125 habitants (OFS, 2025, à vérifier) avec un PIB par habitant d'environ 114 769 USD courants (Banque mondiale, 2025, à vérifier) : petit marché mais à fort pouvoir d'achat. Aucune donnée trouvée sur la taille du marché des détergents (SH 3402) ni sur les importations suisses de cette position.",
+      "sources": [
+        { "intitule": "OFS - Effectif et évolution de la population (STATPOP 2025 : 9 127 125 résidents permanents)", "url": "https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/effectif-evolution.html", "annee": 2025 },
+        { "intitule": "Banque mondiale - PIB par habitant (USD courants), Suisse", "url": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?locations=CH", "annee": 2025 }
+      ]
+    },
+    "concurrence": {
+      "note": 2,
+      "justification": "Selon des données Nielsen relayées par swissinfo (fin 2025, à vérifier), Coop (43 %) et Migros (37,4 %) se partagent l'essentiel de l'alimentation et des produits proches : distribution très concentrée. Aucune source trouvée sur les parts de marché des marques de détergents ni sur les marques propres (aucune source datée trouvée) : note provisoire.",
+      "sources": [
+        { "intitule": "swissinfo - Coop overtakes Migros in battle of Swiss food retailers (données Nielsen citées par la SonntagsZeitung, fin 2025 ; définition de marché non officielle)", "url": "https://www.swissinfo.ch/eng/agribusiness/coop-overtakes-migros-in-core-business/90267923", "annee": 2025 }
+      ]
+    },
+    "reglementation": {
+      "note": 3,
+      "justification": "La Suisse, hors UE, aligne sur le règlement (CE) 648/2004 la biodégradabilité des agents de surface et l'étiquetage, mais ajoute des règles propres (lessives sans phosphates, EDTA/PDTA limité à 0,5 % en lessive et 1 % en produit de nettoyage, notification au registre des produits : OFEV 2023, à vérifier). TVA à l'importation de 8,1 % au taux normal (AFC, 2026, à vérifier) ; exigences d'étiquetage linguistique et de représentant non vérifiées.",
+      "sources": [
+        { "intitule": "OFEV - Détergents (ORRChim annexes 2.1 et 2.2, OChim art. 48 ss.)", "url": "https://www.bafu.admin.ch/fr/detergents", "annee": 2023 },
+        { "intitule": "AFC - Taux de la TVA en Suisse (8,1 % normal, 2,6 % réduit)", "url": "https://www.estv.admin.ch/en/vat-rates-switzerland", "annee": 2026 },
+        { "intitule": "OFDF - Taxe sur la valeur ajoutée à l'importation", "url": "https://bazg.admin.ch/bazg/en/home/informationen-firmen/einfuhr-in-die-schweiz/steuern-und-abgaben_einfuhr/mehrwertsteuer.html", "annee": 2026 }
+      ]
+    },
+    "logistique": {
+      "note": 4,
+      "justification": "La Suisse est le 9e partenaire commercial de la France pour les biens (Trésor, 2025, à vérifier), pays limitrophe : flux et transitaires bien établis. Pays hors union douanière UE : déclaration en douane obligatoire ; aucune source trouvée sur les coûts et délais de transport de produits liquides en bidons de 5 L.",
+      "sources": [
+        { "intitule": "DG Trésor - Les échanges commerciaux bilatéraux France-Suisse", "url": "https://www.tresor.economie.gouv.fr/Articles/2026/04/10/les-echanges-commerciaux-bilateraux-france-suisse", "annee": 2025 },
+        { "intitule": "SECO - Abolition des droits de douane industriels (déclarations en douane toujours requises)", "url": "https://www.seco.admin.ch/en/industrial-tariffs-abolition", "annee": 2026 }
+      ]
+    },
+    "acces_marche": {
+      "note": 3,
+      "justification": "Le SECO annonce la suppression des droits de douane sur les produits industriels (SH chap. 25 à 97, donc dont le chap. 34) depuis le 1er janvier 2024 ; le doute porte sur d'éventuelles exceptions du tarif Tares pour le chapitre 34, à confirmer. La distribution étant très concentrée (Coop et Migros, Nielsen fin 2025), l'accès direct aux rayons est probablement difficile ; aucune source datée trouvée sur le recours à des distributeurs.",
+      "sources": [
+        { "intitule": "SECO - Industrial tariffs abolition (en vigueur au 01/01/2024)", "url": "https://www.seco.admin.ch/en/industrial-tariffs-abolition", "annee": 2024 },
+        { "intitule": "swissinfo - Coop overtakes Migros (Nielsen, fin 2025 ; concentration de la distribution)", "url": "https://www.swissinfo.ch/eng/agribusiness/coop-overtakes-migros-in-core-business/90267923", "annee": 2025 }
+      ]
+    },
+    "proximite_culturelle": {
+      "note": 4,
+      "justification": "La Suisse romande est francophone et la France représente 7,9 % des importations suisses hors or en 2025 (Trésor, à vérifier). Aucune source trouvée sur la part des régions francophones ni sur la réception du « made in France » pour l'entretien : note à confirmer.",
+      "sources": [
+        { "intitule": "DG Trésor - Les échanges commerciaux bilatéraux France-Suisse (part de marché de la France 2025)", "url": "https://www.tresor.economie.gouv.fr/Articles/2026/04/10/les-echanges-commerciaux-bilateraux-france-suisse", "annee": 2025 }
+      ]
+    }
+  },
+  "points_forts": [
+    "Pouvoir d'achat très élevé (PIB/hab. environ 114 769 USD courants, Banque mondiale 2025)",
+    "Droits de douane industriels (SH 25-97) supprimés depuis le 01/01/2024 (SECO), exceptions éventuelles du chapitre 34 à confirmer",
+    "Réglementation détergents largement alignée sur l'UE (règlement 648/2004) selon l'OFEV (2023)",
+    "Proximité géographique et partenaire commercial majeur de la France (9e rang, 2025)"
+  ],
+  "risques": [
+    "Distribution très concentrée (Coop et Migros, Nielsen fin 2025) : négociation difficile",
+    "Exigences suisses propres : sans phosphates, limite EDTA/PDTA, notification au registre des produits, biodégradabilité complète des agents de surface",
+    "Formalités douanières et TVA suisse 8,1 % à l'importation (hors UE)",
+    "Marché de taille modeste (9 127 125 habitants, OFS 2025)",
+    "Aucune donnée chiffrée sur le marché des détergents : décision à prendre sans taille de marché"
+  ],
+  "a_verifier": [
+    "Taux de droit de douane suisse exact pour SH 3402 (tarif Tares, OFDF) : le SECO inclut les chapitres 25-97 mais d'éventuelles exceptions pour le chapitre 34 restent à confirmer",
+    "Importations suisses de SH 3402 (valeur, origines, part de la France) : aucune source trouvée, voir Swiss-Impex (OFDF) ou Comext",
+    "Parts Nielsen Coop 43 % / Migros 37,4 % (swissinfo, fin 2025) : données non officielles, définition de marché à vérifier",
+    "Chiffres non datés, non retenus comme sources : Migros et Coop environ 70 % du détail (Le Temps, citant Credit Suisse) et 52 % de produits sans marque (LSA) ; pages inaccessibles (HTTP 403)",
+    "Cas Briochin (Brunel) via Business France : page Team France Export indiquant une date de publication douteuse (26/10/2026), non retenue comme source",
+    "Part de marché des marques de détergents et des marques propres en Suisse : aucune source datée trouvée",
+    "Seuils EDTA/PDTA (0,5 % en lessive, 1 % en produit de nettoyage) et interdiction des phosphates en lessive (OFEV 2023) : reconfirmer dans l'ORRChim en vigueur",
+    "TVA à l'importation 8,1 % (taux normal) et 2,6 % (réduit) (AFC 2026) : reconfirmer le taux applicable aux détergents",
+    "Population 9 127 125 (OFS 2025) et PIB/hab. 114 769 USD courants (Banque mondiale 2025) : reconfirmer",
+    "Obligations d'étiquetage (langues officielles, mentions) et de représentant/notifiant en Suisse pour des produits fabriqués dans l'UE",
+    "Conformité des formules Bulléo (agents de surface biodégradables, phosphates, EDTA) : données internes, voir questions-bulleo.md",
+    "Réglementation suisse des gels douche (cosmétiques) et des brumes d'intérieur : distincte des détergents, non analysée",
+    "Chiffre Trésor 2025 des exportations françaises vers la Suisse : 17,9 Md EUR ou 22,6 Md EUR (incohérence interne à l'article)",
+    "Seuil de franchise de TVA (150 CHF ou 300 CHF) : sources contradictoires, non pertinent a priori en B2B",
+    "Taux de change EUR/CHF : aucune source consultée",
+    "Classement SH : 3402 est une hypothèse de départ. Gels douche : 3401 (ou 3307.30), parfums et brumes d'intérieur : 3307 (3307.41/49) ; tout est à confirmer avec la douane"
+  ]
+}
