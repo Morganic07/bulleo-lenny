@@ -1,0 +1,9 @@
+{
+  "etapes": [
+    { "numero": 1, "nom": "Étude de marché", "statut": "a_faire", "livrable": "", "maj": "2026-10-29" },
+    { "numero": 2, "nom": "Choix d'une zone cible", "statut": "a_faire", "livrable": "", "maj": "2026-10-29" },
+    { "numero": 3, "nom": "Prospection", "statut": "a_faire", "livrable": "", "maj": "2026-10-29" },
+    { "numero": 4, "nom": "Devis export", "statut": "a_faire", "livrable": "", "maj": "2026-10-29" },
+    { "numero": 5, "nom": "Signature du contrat", "statut": "a_faire", "livrable": "", "maj": "2026-10-29" }
+  ]
+}

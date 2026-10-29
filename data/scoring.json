@@ -1,0 +1,11 @@
+{
+  "criteres": [
+    { "id": "demande", "libelle": "Demande", "poids": 25 },
+    { "id": "concurrence", "libelle": "Concurrence", "poids": 20 },
+    { "id": "reglementation", "libelle": "Réglementation", "poids": 15 },
+    { "id": "logistique", "libelle": "Logistique", "poids": 15 },
+    { "id": "acces_marche", "libelle": "Accès au marché", "poids": 15 },
+    { "id": "proximite_culturelle", "libelle": "Proximité culturelle", "poids": 10 }
+  ],
+  "pays": []
+}

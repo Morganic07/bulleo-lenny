@@ -1,0 +1,21 @@
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+
+# Base de données locale de l'appli
+*.db
+
+# Prospects (données personnelles)
+data/import/
+
+# macOS
+.DS_Store
+
+# Outillage de l'assistant de code, jamais versionné
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+.mcp.json
