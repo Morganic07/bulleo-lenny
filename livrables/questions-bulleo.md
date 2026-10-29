@@ -37,3 +37,10 @@ parallèle de la section Belgique.
 - Étiquettes et FDS existantes : en quelles langues (FR, DE, IT) ?
 - Bulléo a-t-elle déjà arrêté le classement douanier (SH/NC) de chaque produit (pistes : 3402, 3401, 3307) ? Sinon, faut-il demander un avis de classement tarifaire à la douane ?
 - Bulléo a-t-elle déjà des contacts ou des clients en Suisse romande, ou un distributeur suisse envisagé ?
+
+## Zone cible : Belgique, 2026-10-29
+
+- Bulléo valide-t-elle la Belgique (Wallonie et Bruxelles d'abord) comme premier marché export ?
+- Quel mode d'entrée Bulléo préfère-t-elle : vente directe aux professionnels, importateur-distributeur, agent commercial ?
+- Bulléo a-t-elle déjà des clients ou des contacts en Belgique (par exemple via l'espace pros et CSE) ?
+- Bulléo peut-elle produire des étiquettes en français, néerlandais et allemand ?

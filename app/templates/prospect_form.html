@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block titre %}{{ titre }}{% endblock %}
+{% block contenu %}
+<p class="retour"><a href="{{ url_for('prospects') }}">Retour aux prospects</a></p>
+<h1>{{ titre }}</h1>
+
+{% for e in erreurs %}<p class="message message-erreur">{{ e }}</p>{% endfor %}
+
+<form method="post" class="panneau fiche">
+  <label>Entreprise
+    <input name="entreprise" required value="{{ prospect.get('entreprise') or '' }}">
+  </label>
+  <label>Pays <span class="aide">code à 2 lettres, par exemple BE</span>
+    <input name="pays" required maxlength="2" value="{{ prospect.get('pays') or '' }}">
+  </label>
+  <label>Secteur
+    <input name="secteur" value="{{ prospect.get('secteur') or '' }}" placeholder="Hôtellerie, collectivité…">
+  </label>
+  <label>Site web
+    <input name="site_web" type="url" value="{{ prospect.get('site_web') or '' }}" placeholder="https://">
+  </label>
+  <label>Fonction du contact
+    <input name="contact_fonction" value="{{ prospect.get('contact_fonction') or '' }}" placeholder="Responsable achats">
+  </label>
+  <label>Email pro
+    <input name="contact_email_pro" type="email" value="{{ prospect.get('contact_email_pro') or '' }}">
+  </label>
+  <label class="large">Source <span class="aide">page où l'information a été trouvée</span>
+    <input name="source" value="{{ prospect.get('source') or '' }}">
+  </label>
+  <label>Pertinence <span class="aide">de 1 à 5</span>
+    <select name="pertinence">
+      <option value="">Non évaluée</option>
+      {% for n in range(1, 6) %}
+      <option value="{{ n }}" {% if (prospect.get('pertinence') or '')|string == n|string %}selected{% endif %}>{{ n }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Statut
+    <select name="statut">
+      {% for cle, libelle in statuts.items() %}
+      <option value="{{ cle }}" {% if cle == (prospect.get('statut') or 'a_contacter') %}selected{% endif %}>{{ libelle }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Prochaine relance
+    <input name="date_relance" type="date" value="{{ prospect.get('date_relance') or '' }}">
+  </label>
+  <label class="large">Notes
+    <textarea name="notes" rows="6">{{ prospect.get('notes') or '' }}</textarea>
+  </label>
+  <div class="pied">
+    <button type="submit">Enregistrer le prospect</button>
+    {% if prospect.get('cree_le') %}<p class="discret">Créé le {{ prospect.cree_le }}, modifié le {{ prospect.modifie_le }}</p>{% endif %}
+  </div>
+</form>
+{% endblock %}

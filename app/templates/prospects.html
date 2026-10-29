@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block titre %}Prospects{% endblock %}
+{% block contenu %}
+<div class="barre">
+  <h1>Prospects</h1>
+  <div class="actions">
+    <a class="bouton" href="{{ url_for('prospect_nouveau') }}">Ajouter un prospect</a>
+    <a class="bouton bouton-second" href="{{ url_for('prospects_importer') }}">Importer</a>
+    <a class="bouton bouton-second" href="{{ url_for('prospects_export', **filtres) }}">Exporter en CSV</a>
+  </div>
+</div>
+
+<form method="get" class="filtres" role="search">
+  <input type="search" name="q" value="{{ filtres.q }}" placeholder="Rechercher une entreprise, un secteur, une note" aria-label="Rechercher">
+  <select name="pays" aria-label="Pays">
+    <option value="">Tous les pays</option>
+    {% for p in pays_liste %}<option value="{{ p }}" {% if p == filtres.pays|upper %}selected{% endif %}>{{ p }}</option>{% endfor %}
+  </select>
+  <select name="statut" aria-label="Statut">
+    <option value="">Tous les statuts</option>
+    {% for cle, libelle in statuts.items() %}<option value="{{ cle }}" {% if cle == filtres.statut %}selected{% endif %}>{{ libelle }}</option>{% endfor %}
+  </select>
+  <button type="submit" class="bouton-second">Filtrer</button>
+  {% if filtres.q or filtres.pays or filtres.statut %}<a href="{{ url_for('prospects') }}">Effacer les filtres</a>{% endif %}
+</form>
+
+<p class="discret">
+  {{ lignes|length }} prospect{{ "s" if lignes|length > 1 }}.
+  {% if a_relancer %}<span class="temoin-relance" aria-hidden="true"></span>{{ a_relancer|length }} à relancer aujourd'hui ou en retard, surligné{{ "s" if a_relancer|length > 1 }} en jaune.{% endif %}
+</p>
+
+<div class="tableau">
+<table>
+  <thead>
+    <tr>
+      <th>Entreprise</th><th>Pays</th><th>Secteur</th><th>Contact</th><th>Email pro</th>
+      <th class="nombre">Pertinence</th><th>Statut</th><th>Relance</th><th>Site</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in lignes %}
+    <tr {% if p.id in a_relancer %}class="a-relancer"{% endif %}>
+      <td><a class="pays-nom" href="{{ url_for('prospect_modifier', id_prospect=p.id) }}">{{ p.entreprise }}</a></td>
+      <td>{{ p.pays }}</td>
+      <td>{{ p.secteur or "" }}</td>
+      <td>{{ p.contact_fonction or "" }}</td>
+      <td>{{ p.contact_email_pro or "" }}</td>
+      <td class="nombre">{% if p.pertinence %}<span class="note note-{{ p.pertinence }}">{{ p.pertinence }}</span>{% endif %}</td>
+      <td><span class="statut statut-{{ p.statut }}">{{ statuts.get(p.statut, p.statut) }}</span></td>
+      <td>{{ p.date_relance|date_fr if p.date_relance else "" }}</td>
+      <td>{% if url_sure(p.site_web) %}<a href="{{ p.site_web }}" rel="noopener noreferrer">Ouvrir</a>{% endif %}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="9" class="vide">
+      {% if filtres.q or filtres.pays or filtres.statut %}Aucun prospect ne correspond à ces filtres.
+      {% else %}Aucun prospect pour l'instant. Ajoute-en un, ou importe le fichier que l'agent prospecteur a déposé dans data/import/.{% endif %}
+    </td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

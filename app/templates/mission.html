@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block titre %}Suivi de mission{% endblock %}
+{% block contenu %}
+{% set validees = etapes|selectattr("statut", "equalto", "validee")|list %}
+{% set suivante = etapes|rejectattr("statut", "equalto", "validee")|first %}
+
+<h1>Mission export</h1>
+<p class="chapo">
+  {% if not etapes %}
+    Aucune étape à afficher : data/mission.json est absent ou vide.
+  {% elif suivante %}
+    {{ validees|length }} étape{{ "s" if validees|length > 1 }} validée{{ "s" if validees|length > 1 }} sur {{ etapes|length }}.
+    Prochaine : {{ suivante.nom|lower }}, {{ statuts.get(suivante.statut, suivante.statut)|lower }}.
+  {% else %}
+    Les {{ etapes|length }} étapes sont validées.
+  {% endif %}
+</p>
+
+{% if etapes %}
+<ol class="parcours">
+  {% for e in etapes %}
+  <li class="etape etat-{{ e.statut }}">
+    <a href="{{ url_for('etape', numero=e.numero) }}">
+      <span class="etape-bulle" aria-hidden="true">{{ e.numero }}</span>
+      <span class="etape-nom">{{ e.nom }}</span>
+      <span class="statut statut-{{ e.statut }}">{{ statuts.get(e.statut, e.statut) }}</span>
+      <span class="etape-date">Mis à jour le {{ e.maj|date_fr }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ol>
+{% endif %}
+
+{# Le fichier questions-bulleo.md porte déjà son propre titre : pas de titre en double. #}
+{% if questions %}
+  <section class="panneau markdown">{{ questions|safe }}</section>
+{% else %}
+  <h2>Questions pour Bulléo</h2>
+  <p class="discret">Pas encore de questions : les agents les ajoutent dans livrables/questions-bulleo.md quand une donnée interne manque.</p>
+{% endif %}
+{% endblock %}

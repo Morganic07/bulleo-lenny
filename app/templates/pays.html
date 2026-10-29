@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block titre %}Pays{% endblock %}
+{% block contenu %}
+<h1>Pays analysés</h1>
+<p class="chapo">Classés par score pondéré : chaque note de 1 à 5 compte selon le poids de son critère.</p>
+
+{% for e in erreurs_fiches %}
+  <p class="message message-erreur">Fiche ignorée : {{ e }}</p>
+{% endfor %}
+
+<div class="tableau">
+<table>
+  <thead>
+    <tr>
+      <th>Rang</th>
+      <th>Pays</th>
+      {% for c in criteres %}<th class="nombre">{{ c.libelle }}<span class="poids">poids {{ c.poids }}</span></th>{% endfor %}
+      <th>Score sur 5</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for l in lignes %}
+    <tr>
+      <td class="rang">{{ l.rang if l.rang is not none else "—" }}</td>
+      <td class="sans-coupure"><a class="pays-nom" href="{{ url_for('pays_detail', code=l.code) }}">{{ l.nom }}</a> <span class="discret">{{ l.code }}</span></td>
+      {% for c in criteres %}
+        {% set n = l.notes[c.id] %}
+        <td class="nombre">{% if n is not none %}<span class="note note-{{ n }}">{{ n }}</span>{% else %}<span class="note note-vide">—</span>{% endif %}</td>
+      {% endfor %}
+      <td>
+        {% if l.score is not none %}
+          <div class="score"><strong>{{ "%.2f"|format(l.score) }}</strong><span class="jauge" aria-hidden="true"><span style="--score: {{ l.score }}"></span></span></div>
+        {% else %}
+          <span class="discret">incomplet : une note manque</span>
+        {% endif %}
+      </td>
+    </tr>
+    {% else %}
+    <tr><td colspan="{{ criteres|length + 3 }}" class="vide">Aucune fiche dans data/pays/. L'agent analyste-marche les y écrit à l'étape 1.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+
+<h2>Pondérations</h2>
+<p class="discret">Modifie l'importance de chaque critère. Le total doit faire 100 ; le classement se recalcule à l'enregistrement.</p>
+{% if erreur %}<p class="message message-erreur">{{ erreur }}</p>{% endif %}
+<form method="post" action="{{ url_for('ponderations') }}" class="panneau ponderations">
+  {% for c in criteres %}
+  <label>
+    {{ c.libelle }}
+    <input type="number" name="poids_{{ c.id }}" min="0" max="100" step="1" required
+           value="{{ saisie.get('poids_' ~ c.id, c.poids) }}">
+  </label>
+  {% endfor %}
+  <div class="pied">
+    <button type="submit">Enregistrer les pondérations</button>
+    <p class="discret">Total enregistré : {{ total }}</p>
+  </div>
+</form>
+{% endblock %}

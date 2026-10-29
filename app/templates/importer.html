@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block titre %}Importer des prospects{% endblock %}
+{% block contenu %}
+<p class="retour"><a href="{{ url_for('prospects') }}">Retour aux prospects</a></p>
+<h1>Importer des prospects</h1>
+
+{% if fichiers %}
+<p class="chapo">Un prospect déjà présent, même entreprise et même pays, n'est pas ajouté une deuxième fois.</p>
+<form method="post" class="panneau fiche">
+  <fieldset>
+    <legend>Fichiers déposés dans data/import/</legend>
+    {% for f in fichiers %}
+    <label class="choix"><input type="radio" name="fichier" value="{{ f }}" required {% if loop.last %}checked{% endif %}> {{ f }}</label>
+    {% endfor %}
+  </fieldset>
+  <div class="pied"><button type="submit">Importer ce fichier</button></div>
+</form>
+{% else %}
+<p class="message message-info">Aucun fichier dans data/import/. L'agent prospecteur y dépose ses fichiers prospects-AAAA-MM-JJ.json à l'étape 3.</p>
+{% endif %}
+{% endblock %}

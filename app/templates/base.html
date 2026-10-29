@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block titre %}{% endblock %} | Bulléo Export Hub</title>
+  {# Police chargée depuis Google Fonts ; sans connexion, le navigateur bascule sur la police système. #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=version_css()) }}">
+</head>
+<body>
+  <header class="entete">
+    <a class="marque" href="{{ url_for('mission') }}">
+      <span class="bulles" aria-hidden="true"></span>
+      <strong>Bulléo</strong><span>Export Hub</span>
+    </a>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="{{ url_for('mission') }}" {% if request.endpoint in ('mission', 'etape') %}aria-current="page"{% endif %}>Mission</a>
+      <a href="{{ url_for('pays') }}" {% if request.endpoint and request.endpoint.startswith('pays') %}aria-current="page"{% endif %}>Pays</a>
+      <a href="{{ url_for('prospects') }}" {% if request.endpoint and request.endpoint.startswith('prospect') %}aria-current="page"{% endif %}>Prospects</a>
+    </nav>
+  </header>
+  <main>
+    {% for categorie, message in get_flashed_messages(with_categories=true) %}
+      <p class="message message-{{ categorie }}" role="status">{{ message }}</p>
+    {% endfor %}
+    {% block contenu %}{% endblock %}
+  </main>
+</body>
+</html>

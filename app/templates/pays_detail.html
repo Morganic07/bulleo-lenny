@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block titre %}{{ fiche.nom or code }}{% endblock %}
+{% block contenu %}
+<p class="retour"><a href="{{ url_for('pays') }}">Retour aux pays</a></p>
+<h1>{{ fiche.nom or code }}</h1>
+<p class="chapo">
+  {% if score is not none %}Score pondéré {{ "%.2f"|format(score) }} sur 5{% else %}Score incomplet : une note manque{% endif %},
+  fiche du {{ (fiche.genere_le or "?")|date_fr }}.
+</p>
+
+<section class="panneau">
+{% for c in criteres %}
+  {% set crit = fiche.criteres.get(c.id) %}
+  <div class="critere">
+    {% if crit and crit.note %}<span class="note note-{{ crit.note }}">{{ crit.note }}</span>{% else %}<span class="note note-vide">—</span>{% endif %}
+    <div>
+      <h3>{{ c.libelle }}</h3>
+      {% if crit %}
+        <p>{{ crit.justification }}</p>
+        {% if crit.sources %}
+        <ul class="sources">
+          {% for s in crit.sources %}
+          <li>
+            {% if url_sure(s.url) %}<a href="{{ s.url }}" rel="noopener noreferrer">{{ s.intitule or s.url }}</a>{% else %}{{ s.intitule }}{% if s.url %} ({{ s.url }}){% endif %}{% endif %},
+            {{ s.annee or "année inconnue" }}
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <p class="discret">Aucune source.</p>
+        {% endif %}
+      {% else %}
+        <p class="message message-erreur">Critère absent de la fiche.</p>
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}
+</section>
+
+<div class="colonnes">
+  <section class="panneau">
+    <h2>Points forts</h2>
+    <ul>{% for p in fiche.points_forts or [] %}<li>{{ p }}</li>{% else %}<li class="discret">Aucun point fort relevé.</li>{% endfor %}</ul>
+  </section>
+  <section class="panneau">
+    <h2>Risques</h2>
+    <ul>{% for r in fiche.risques or [] %}<li>{{ r }}</li>{% else %}<li class="discret">Aucun risque relevé.</li>{% endfor %}</ul>
+  </section>
+</div>
+
+<section class="panneau a-verifier colonnes">
+  <div>
+    <h2>À vérifier</h2>
+    <ul>{% for a in fiche.a_verifier or [] %}<li>{{ a }}</li>{% else %}<li class="discret">Rien à vérifier.</li>{% endfor %}</ul>
+  </div>
+</section>
+{% endblock %}

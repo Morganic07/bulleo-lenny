@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block titre %}Étape {{ etape.numero }}{% endblock %}
+{% block contenu %}
+<p class="retour"><a href="{{ url_for('mission') }}">Retour au suivi de mission</a></p>
+<h1>{{ etape.numero }}. {{ etape.nom }}</h1>
+<p>
+  <span class="statut statut-{{ etape.statut }}">{{ statuts.get(etape.statut, etape.statut) }}</span>
+  <span class="discret">Mis à jour le {{ etape.maj|date_fr }}{% if etape.livrable %}, fichier {{ etape.livrable }}{% endif %}</span>
+</p>
+
+{% if contenu %}
+  <article class="panneau markdown">{{ contenu|safe }}</article>
+{% else %}
+  <p class="message message-info">
+    Aucun livrable affichable pour cette étape.
+    Seuls les fichiers Markdown (.md) du dossier livrables/ s'affichent ici.
+  </p>
+{% endif %}
+{% endblock %}
