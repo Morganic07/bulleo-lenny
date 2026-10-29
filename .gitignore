@@ -17,5 +17,13 @@ data/import/
 # Outillage de l'assistant de code, jamais versionné
 CLAUDE.md
 CLAUDE.local.md
-.claude/
 .mcp.json
+
+# Exception à la règle globale pour ce projet : agents, skills et permissions
+# partagés sont versionnés ; le reste de .claude/ (réglages locaux) ne l'est pas.
+# `!.claude/` annule l'exclusion du dossier posée par le gitignore global.
+!.claude/
+.claude/*
+!.claude/agents/
+!.claude/skills/
+!.claude/settings.json

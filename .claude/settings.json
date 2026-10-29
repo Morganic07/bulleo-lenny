@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/data/**)",
+      "Edit(/data/**)",
+      "Read(/livrables/**)",
+      "Edit(/livrables/**)"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Bash(rm -rf *)",
+      "Bash(rm -fr *)",
+      "Bash(sudo *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(git push *)"
+    ],
+    "blockReadsOutsideWorkingDirectories": true
+  }
+}
